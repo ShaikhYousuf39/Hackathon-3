@@ -30,9 +30,6 @@ export default function Header() {
               <Link href="/help" className="hover:underline">
                 Need Help
               </Link>
-              <Link href="/admin/login" className="hover:underline">
-                Admin Login
-              </Link>
             </div>
           </div>
         </div>
