@@ -1,12 +1,12 @@
 'use client';
 import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // For page redirection
+import { useRouter } from "next/navigation";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const router = useRouter(); // For navigation
+  const router = useRouter();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,8 +16,8 @@ const AdminLogin = () => {
       return;
     }
 
-    const adminEmail = "dummyemail@gmail.com";
-    const adminPassword = "dummy123";
+    const adminEmail = "comfortyadmin123@gmail.com";
+    const adminPassword = "$Poon123";
 
     if (email === adminEmail && password === adminPassword) {
       router.push("/admin/dashboard");
