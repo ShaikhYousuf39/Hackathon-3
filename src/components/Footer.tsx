@@ -153,8 +153,8 @@ const Footer = () => {
       <div className="border-t mt-8 pt-4">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
           <p className="text-center md:text-left">
-            &copy; 2021 Comforty - Designed & Developed by{" "}
-            <b className="text-[#272343]">Zakirsoft</b>
+            &copy; 2025 Comforty - Designed & Developed by{" "}
+            <b className="text-[#272343]">Shaikh Yousuf</b>
           </p>
           <div className="flex space-x-4 items-center justify-center">
             <img src="/paypal.png" width={80} height={47} alt="cash" />
