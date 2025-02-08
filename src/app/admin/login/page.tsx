@@ -1,12 +1,12 @@
 'use client';
 import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // For page redirection
+import { useRouter } from "next/navigation";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const router = useRouter(); // For navigation
+  const router = useRouter();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,8 +16,8 @@ const AdminLogin = () => {
       return;
     }
 
-    const adminEmail = "dummyemail@gmail.com";
-    const adminPassword = "dummy123";
+    const adminEmail = "comfortyadmin123@gmail.com";
+    const adminPassword = "$Poon123";
 
     if (email === adminEmail && password === adminPassword) {
       router.push("/admin/dashboard");
@@ -42,7 +42,7 @@ const AdminLogin = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
-              placeholder="Enter your email (dummyemail@gmail.com)"
+              placeholder="Enter your email"
               required
             />
           </div>
@@ -55,7 +55,7 @@ const AdminLogin = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
-              placeholder="Enter your password (dummy123)"
+              placeholder="Enter your password"
               required
             />
           </div>
