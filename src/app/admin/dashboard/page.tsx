@@ -17,7 +17,6 @@ const Dashboard = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // Fetch products when component mounts
   useEffect(() => {
     const fetchProducts = async () => {
       const fetchedProducts = await adminData();
@@ -36,7 +35,6 @@ const Dashboard = () => {
     <div className="max-w-7xl mx-auto p-8">
       <h2 className="text-3xl font-semibold mb-6 text-gray-800">Admin Dashboard</h2>
       
-      {/* Product Table Section */}
       <div className="overflow-x-auto bg-white shadow-lg rounded-md border border-gray-200">
         <table className="min-w-full table-auto text-gray-800">
           <thead className="bg-teal-500 text-white">

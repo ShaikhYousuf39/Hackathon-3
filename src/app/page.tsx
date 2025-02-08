@@ -1,122 +1,48 @@
-import Products from "@/components/Products";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import Link from "next/link";
+'use client';
 
-const inter = Inter({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-});
+import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Home() {
+export default function Hero() {
   return (
-    <div>
-      <div className={`${inter.className} bg-white`}>
-        <div className="flex flex-col lg:flex-row items-center justify-center my-12 lg:my-24 lg:mx-72 mx-4 gap-10">
-          <div className="flex flex-col gap-y-6 text-center lg:text-left">
-            <p className="text-sm text-indigo-950">WELCOME TO CHAIRY</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-indigo-950">
-              Best Furniture Collection For Your Interior
-            </h1>
-            <Link href="/products" className="py-3 w-[200px] px-5 bg-slate-600 text-center text-white  rounded-lg mx-auto lg:mx-0">
-              Shop Now →
-            </Link>
-          </div>
-          <div>
-            <Image
-              src="/right.png"
-              width={450}
-              height={600}
-              alt="right"
-              className="w-full"
-            />
-          </div>
+    <div className="flex flex-col md:flex-row min-h-screen">
+      <div className="md:w-1/2 bg-gray-900 text-white flex flex-col justify-center items-center md:items-start p-6 sm:p-8 md:p-16 space-y-4 md:space-y-6 text-center md:text-left">
+        <div className="flex items-center space-x-2">
+          <Image src="/logo1.png" alt="Comforty Logo" width={45} height={40} className="w-12 h-10 sm:w-14 sm:h-12" priority />
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold">Comforty</h1>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-20 my-12 px-4">
-          <Image src="/logos/logo.png" width={87} height={87} alt="logo" />
-          <Image src="/logos/logo2.png" width={107} height={109} alt="logo" />
-          <Image src="/logos/logo3.png" width={135} height={139} alt="logo" />
-          <Image src="/logos/logo4.png" width={63} height={65} alt="logo" />
-          <Image src="/logos/logo5.png" width={98} height={101} alt="logo" />
-          <Image src="/logos/logo6.png" width={113} height={115} alt="logo" />
-          <Image src="/logos/logo7.png" width={84} height={87} alt="logo" />
-        </div>
-
-        <div className="flex flex-col justify-center my-20">
-          <h1 className="mx-4 lg:mx-60 my-12 text-3xl text-indigo-950 font-bold">
-            Top Categories
-          </h1>
-          <div className="flex flex-wrap justify-center items-center gap-6 px-4">
-            {["/category/1.png", "/category/2.png", "/category/3.png"].map(
-              (src, index) => (
-                <div key={index} className="w-full sm:w-[312px]">
-                  <Image
-                    src={src}
-                    width={424}
-                    height={424}
-                    alt="category"
-                    className="rounded-lg my-3 w-full"
-                  />
-                </div>
-              )
-            )}
-          </div>
-        </div>
-
-        <div className="flex flex-col md:flex-row justify-start items-center py-12 md:py-24 mx-4 md:mx-36">
-          <p className="md:-rotate-90 text-base md:text-xl font-medium uppercase tracking-wider text-zinc-900 pt-6">
-            Explore new and popular styles
-          </p>
-
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-7 mt-6 md:mt-0">
-            <div>
-              <Image
-                src="/chairs/3.png"
-                width={648}
-                height={648}
-                alt="chair"
-                className="w-full md:w-[648px] h-auto"
-              />
-            </div>
-            <div className="flex gap-4 md:gap-6">
-              <div className="flex flex-col gap-4 md:gap-6">
-                <Image
-                  src="/chairs/chair1.png"
-                  width={312}
-                  height={312}
-                  alt="chair"
-                  className="w-full md:w-[312px] h-auto"
-                />
-                <Image
-                  src="/chairs/chair2.png"
-                  width={312}
-                  height={312}
-                  alt="chair"
-                  className="w-full md:w-[312px] h-auto"
-                />
-              </div>
-              <div className="flex flex-col gap-4 md:gap-6">
-                <Image
-                  src="/chairs/chair3.png"
-                  width={312}
-                  height={312}
-                  alt="chair"
-                  className="w-full md:w-[312px] h-auto"
-                />
-                <Image
-                  src="/chairs/chair3.png"
-                  width={312}
-                  height={312}
-                  alt="chair"
-                  className="w-full md:w-[312px] h-auto"
-                />
-              </div>
-            </div>
-          </div>
+        <p className="text-sm sm:text-base md:text-xl text-gray-300 max-w-sm md:max-w-md">
+          Discover comfort and style with our premium collection of chairs.
+          Elevate your space with ergonomic design and unparalleled comfort.
+        </p>
+        <div className="border-none md:border-l-4 border-blue-500 md:pl-4">
+          <p className="italic text-gray-400 text-xs sm:text-sm md:text-base">Where comfort meets elegance</p>
         </div>
       </div>
-      <Products />
+
+      <div className="md:w-1/2 bg-gray-100 flex flex-col justify-center items-center p-6 sm:p-8 md:p-16 space-y-4 sm:space-y-6 md:space-y-8">
+        <div className="text-center">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mb-2 sm:mb-4">Welcome</h2>
+          <p className="text-xs sm:text-sm md:text-base text-gray-600">Join our community of comfort enthusiasts</p>
+        </div>
+
+        <div className="space-y-3 sm:space-y-4 w-full max-w-xs">
+          <Link href="/login" className="w-full flex items-center justify-center bg-blue-600 text-white py-2 sm:py-3 rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L10.586 9H5a1 1 0 110-2h5.586L10.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+            Login
+          </Link>
+
+          <Link href="/signup" className="w-full flex items-center justify-center bg-gray-800 text-white py-2 sm:py-3 rounded-lg hover:bg-gray-700 transition duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
+            </svg>
+            Sign Up
+          </Link>
+        </div>
+      </div>
     </div>
-  )
+  );
 }

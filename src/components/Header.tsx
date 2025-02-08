@@ -30,9 +30,6 @@ export default function Header() {
               <Link href="/help" className="hover:underline">
                 Need Help
               </Link>
-              <Link href="/admin/login" className="hover:underline">
-                Admin Login
-              </Link>
             </div>
           </div>
         </div>
@@ -40,7 +37,7 @@ export default function Header() {
         <div className="container mx-auto py-4 md:flex justify-between items-center px-4 md:px-12 lg:px-40">
           <div className="flex items-center gap-3">
             <Image src="/logo.png" width={40} height={40} alt="logo" />
-            <Link href="/" className="text-2xl font-medium text-slate-900">
+            <Link href="/home" className="text-2xl font-medium text-slate-900">
               Comforty
             </Link>
           </div>

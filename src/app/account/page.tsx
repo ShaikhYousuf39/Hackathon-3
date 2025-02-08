@@ -1,74 +1,62 @@
-import React from 'react';
-import { FaEdit, FaHistory, FaShippingFast, FaCreditCard, FaSignOutAlt } from 'react-icons/fa';
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { FaUser, FaBoxOpen, FaSignOutAlt } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const AccountPage = () => {
-  return (
-    <div className="min-h-screen bg-gray-50 flex justify-center items-center">
-      <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-8">
-        <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-12">My Account</h1>
+  const [user, setUser] = useState<{ username: string; email: string } | null>(null);
+  const router = useRouter();
 
-        <div className="bg-gray-100 shadow-md rounded-lg p-6 mb-8 text-center">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">Profile</h2>
-          <div className="space-y-4 text-lg text-gray-700">
-            <p><strong>Name:</strong> Jawaad Akhter</p>
-            <p><strong>Email:</strong> jawaad.akhter@example.com</p>
-            <p><strong>Phone:</strong> +92 3158130073</p>
-          </div>
-          <button className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-            <FaEdit className="inline mr-2" />
+  useEffect(() => {
+    const storedUser = localStorage.getItem("loggedInUser");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    } else {
+      router.push("/login");
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("loggedInUser");
+    router.push("/login");
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">Account</h1>
+      
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center text-center">
+          <FaUser className="text-5xl text-blue-500 mb-4" />
+          <h2 className="text-2xl font-semibold mb-4">Profile Information</h2>
+          <p className="text-gray-600"><strong>Name:</strong> {user?.username || "Guest"}</p>
+          <p className="text-gray-600"><strong>Email:</strong> {user?.email || "N/A"}</p>
+          <button className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
             Edit Profile
           </button>
         </div>
 
-        <div className="bg-gray-100 shadow-md rounded-lg p-6 mb-8 text-center">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">Order History</h2>
-          <ul className="divide-y divide-gray-300">
-            <li className="py-4 flex justify-between items-center">
-              <span className="text-lg text-gray-700">Order #12345</span>
-              <span className="text-gray-500 text-lg">$45.99</span>
-            </li>
-            <li className="py-4 flex justify-between items-center">
-              <span className="text-lg text-gray-700">Order #67890</span>
-              <span className="text-gray-500 text-lg">$89.99</span>
-            </li>
+        <div className="bg-white shadow-lg rounded-xl p-6">
+          <div className="flex items-center gap-2 mb-4">
+            <FaBoxOpen className="text-3xl text-green-500" />
+            <h2 className="text-2xl font-semibold">Order History</h2>
+          </div>
+          <ul className="text-gray-700">
+            <li className="border-b py-3"><strong>Order #12345:</strong> Luxury Office Chair - $199.99 (Delivered)</li>
+            <li className="border-b py-3"><strong>Order #12346:</strong> Ergonomic Gaming Chair - $249.99 (Shipped)</li>
+            <li className="py-3"><strong>Order #12347:</strong> Comforty Recliner - $299.99 (Processing)</li>
           </ul>
-          <button className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-            <FaHistory className="inline mr-2" />
-            View All Orders
-          </button>
         </div>
-
-        <div className="bg-gray-100 shadow-md rounded-lg p-6 mb-8 text-center">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">Saved Addresses</h2>
-          <ul className="space-y-4 text-lg text-gray-700">
-            <li>Sector 7D, Surjani Town, Karachi, Pakistan</li>
-            <li>Landhi No 1, Karachi, Pakistan</li>
-          </ul>
-          <button className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-            <FaShippingFast className="inline mr-2" />
-            Add New Address
-          </button>
-        </div>
-
-        <div className="bg-gray-100 shadow-md rounded-lg p-6 mb-8 text-center">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">Payment Methods</h2>
-          <ul className="space-y-4 text-lg text-gray-700">
-            <li>Visa ending in 1234</li>
-            <li>MasterCard ending in 5678</li>
-          </ul>
-          <button className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-            <FaCreditCard className="inline mr-2" />
-            Add Payment Method
-          </button>
-        </div>
-
-        <div className="bg-gray-100 shadow-md rounded-lg p-6 text-center">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">Account Settings</h2>
-          <button className="w-full bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700">
-            <FaSignOutAlt className="inline mr-2" />
-            Logout
-          </button>
-        </div>
+      </div>
+      
+      <div className="bg-white shadow-lg rounded-xl p-6 mt-6 flex justify-center">
+        <button
+          onClick={handleLogout}
+          className="flex items-center gap-2 bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition"
+        >
+          <FaSignOutAlt className="text-lg" /> Logout
+        </button>
       </div>
     </div>
   );

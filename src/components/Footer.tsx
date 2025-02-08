@@ -67,32 +67,32 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="#" className="hover:text-teal-500">
+              <Link href="/products" className="hover:text-teal-500">
                 Sofa
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-teal-500">
+              <Link href="/products" className="hover:text-teal-500">
                 Armchair
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-teal-500">
+              <Link href="/products" className="hover:text-teal-500">
                 Wing Chair
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-teal-500">
+              <Link href="/products" className="hover:text-teal-500">
                 Desk Chair
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-teal-500">
+              <Link href="/products" className="hover:text-teal-500">
                 Wooden Chair
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-teal-500">
+              <Link href="/products" className="hover:text-teal-500">
                 Park Bench
               </Link>
             </li>
@@ -105,22 +105,22 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="#" className="hover:text-teal-500">
+              <Link href="/contact" className="hover:text-teal-500">
                 Help & Support
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-teal-500">
+              <Link href="/terms" className="hover:text-teal-500">
                 Terms & Conditions
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-teal-500">
+              <Link href="/privacy" className="hover:text-teal-500">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-teal-500">
+              <Link href="/help" className="hover:text-teal-500">
                 Help
               </Link>
             </li>
@@ -144,8 +144,7 @@ const Footer = () => {
             </button>
           </form>
           <p className="text-sm text-gray-600 mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            tincidunt erat enim.
+            Subscribe Here! Get our latest offers and news straight in your inbox.
           </p>
         </div>
       </div>
@@ -153,8 +152,8 @@ const Footer = () => {
       <div className="border-t mt-8 pt-4">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
           <p className="text-center md:text-left">
-            &copy; 2021 Comforty - Designed & Developed by{" "}
-            <b className="text-[#272343]">Zakirsoft</b>
+            &copy; 2025 Comforty - Designed & Developed by{" "}
+            <b className="text-[#272343]">Shaikh Yousuf</b>
           </p>
           <div className="flex space-x-4 items-center justify-center">
             <img src="/paypal.png" width={80} height={47} alt="cash" />
