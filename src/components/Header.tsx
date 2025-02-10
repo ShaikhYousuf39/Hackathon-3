@@ -79,7 +79,7 @@ export default function Header() {
             </div>
             <div className="flex items-center gap-3">
               <span className="text-gray-600">Contact:</span>
-              <span className="text-slate-900 font-medium">(808) 555-0111</span>
+              <span className="text-slate-900 font-medium">+92 15 8130073</span>
             </div>
           </div>
         </div>
