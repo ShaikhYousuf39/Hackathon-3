@@ -36,19 +36,6 @@ const AccountPage = () => {
             Edit Profile
           </button>
         </div>
-
-        <div className="bg-white shadow-lg rounded-xl p-6">
-          <div className="flex items-center gap-2 mb-4">
-            <FaBoxOpen className="text-3xl text-green-500" />
-            <h2 className="text-2xl font-semibold">Order History</h2>
-          </div>
-          <ul className="text-gray-700">
-            <li className="border-b py-3"><strong>Order #12345:</strong> Luxury Office Chair - $199.99 (Delivered)</li>
-            <li className="border-b py-3"><strong>Order #12346:</strong> Ergonomic Gaming Chair - $249.99 (Shipped)</li>
-            <li className="py-3"><strong>Order #12347:</strong> Comforty Recliner - $299.99 (Processing)</li>
-          </ul>
-        </div>
-      </div>
       
       <div className="bg-white shadow-lg rounded-xl p-6 mt-6 flex justify-center">
         <button
